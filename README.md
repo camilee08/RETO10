@@ -211,5 +211,38 @@ if __name__ == "__main__":
  ```
 ## 5. Desarrollar un programa que sume los elementos de una fila dada de una matriz.
 ```
+# Función para sumar los elementos de una fila específica
+def sumaf(matriz, fila):
+    suma = 0
+    for valor in matriz[fila]:
+        suma += valor
+    return suma
 
+# Función para ingresar los datos de una matriz
+def ingmatriz(filas, columnas):
+    matriz = []
+    print("Ingrese los elementos de la matriz:")
+    for n in range(filas):
+        fila = []
+        for i in range(columnas):
+            print("Elemento en la fila", n + 1, ", columna", i + 1, ":")
+            valor = float(input())
+            fila.append(valor)
+        matriz.append(fila)
+    return matriz
+
+
+# Función principal
+if __name__ == "__main__":
+    filas = int(input("Ingrese el número de filas: "))
+    columnas = int(input("Ingrese el número de columnas: "))
+
+    matriz = ingmatriz(filas, columnas)
+
+    print("¿Qué fila desea sumar?:")
+    n = int(input())
+
+    if 1 <= n <= filas:
+        print("La suma de los elementos en la fila", n, "es:", sumaf(matriz, n))
 ```
+Gracias!!
