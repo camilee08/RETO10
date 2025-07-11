@@ -171,3 +171,45 @@ if __name__ == "__main__":
     impmatriz(matriz_transpuesta)
 ```
 ## 4. Desarrollar un programa que sume los elementos de una columna dada de una matriz.
+```
+# Función para sumar los elementos de una columna específica
+def sumac(matriz, columna):
+    suma = 0
+    for fila in matriz:
+        suma += fila[columna]
+    return suma
+
+# Función para ingresar una matriz 
+def ingmatriz(filas, columnas):
+    matriz = []
+    for n in range(filas):
+        fila = []
+        for i in range(columnas):
+            print("Elemento en la fila", n + 1, ", columna", i + 1, ": ")
+            valor = float(input()) 
+            fila.append(valor)
+        matriz.append(fila)
+    return matriz
+
+def impmatriz(matriz):
+    for fila in matriz:
+        print(fila)
+
+# Función principal
+if __name__ == "__main__":
+    filas = int(input("Ingrese el número de filas: "))
+    columnas = int(input("Ingrese el número de columnas: "))
+
+    matriz = ingmatriz(filas, columnas)
+
+    print("¿Qué columna desea sumar?: ")
+    col_deseada = int(input())
+
+    if 1 <= col_deseada <= columnas:
+        resultado = sumac(matriz, col_deseada - 1) # esto porque la operación se hace con los indices
+        print("La suma de los elementos en la columna", col_deseada, "es:", resultado)
+ ```
+## 5. Desarrollar un programa que sume los elementos de una fila dada de una matriz.
+```
+
+```
